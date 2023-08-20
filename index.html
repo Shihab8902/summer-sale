@@ -26,8 +26,6 @@
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
         }
-
-        .btn-disabled {}
     </style>
 </head>
 
@@ -74,7 +72,8 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                         <!-- Product one -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod1.png" alt="Image unavailable" />
                             </figure>
@@ -99,7 +98,8 @@
 
 
                         <!-- Product Two -->
-                        <div class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod2.png" alt="Image unavailable" />
                             </figure>
@@ -125,7 +125,8 @@
 
 
                         <!-- Product Three -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod3.png" alt="Image unavailable" />
                             </figure>
@@ -163,7 +164,8 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                         <!-- Product one -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod4.png" alt="Image unavailable" />
                             </figure>
@@ -188,7 +190,8 @@
 
 
                         <!-- Product Two -->
-                        <div class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod5.png" alt="Image unavailable" />
                             </figure>
@@ -214,7 +217,8 @@
 
 
                         <!-- Product Three -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod6.png" alt="Image unavailable" />
                             </figure>
@@ -252,7 +256,8 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                         <!-- Product one -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod7.png" alt="Image unavailable" />
                             </figure>
@@ -277,7 +282,8 @@
 
 
                         <!-- Product Two -->
-                        <div class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card  bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod8.png" alt="Image unavailable" />
                             </figure>
@@ -303,7 +309,8 @@
 
 
                         <!-- Product Three -->
-                        <div class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
+                        <div onclick="calculatePriceAndDiscount(this)"
+                            class="card bg-base-100 rounded-lg cursor-pointer shadow-lg md:shadow-none">
                             <figure class="px-10 py-10 bg-[#1111110f] mx-5 mt-5 rounded-lg">
                                 <img src="/images/prod9.png" alt="Image unavailable" />
                             </figure>
@@ -349,7 +356,7 @@
                     <div class="relative">
                         <input class="p-3 outline-none border-left-radius w-[70%] text-xl border" type="text"
                             name="couponField" id="couponField" placeholder="Coupon code">
-                        <button disabled
+                        <button disabled id="couponApplyButton"
                             class="absolute disabled:bg-[#c9c7c7] disabled:text-gray-200 right-0 bg-[#E527B2] font-semibold text-white  py-[15px] border-right-radius w-[30%]">Apply</button>
                     </div>
 
@@ -359,31 +366,30 @@
                 <div class="p-6 mt-6 bg-base-100 rounded-lg">
 
                     <!-- product list -->
-                    <ul>
-                        <li class="font-medium text-xl mb-3">1. Home cooker</li>
-                        <li class="font-medium text-xl mb-3">2. Home cooker</li>
-                        <li class="font-medium text-xl mb-3">3. Home cooker</li>
+                    <ul id="boughtProductList">
+                        <!-- <li class="font-medium text-xl mb-3">1. Home cooker</li> -->
+
                     </ul>
                     <hr>
 
                     <!-- Billing -->
                     <ul class="mt-4">
-                        <li class="text-xl font-semibold mb-3">Total price: <span
-                                class="text-xl font-medium text-[#1111117e]">257.00TK</span>
+                        <li class="text-xl font-semibold mb-3">Total price: <span id="totalPriceDisplay"
+                                class="text-xl font-medium text-[#1111117e]">0.00TK</span>
                         </li>
 
-                        <li class="text-xl font-semibold mb-3">Discount: <span
-                                class="text-xl font-medium text-[#1111117e]">257.00TK</span>
+                        <li class="text-xl font-semibold mb-3">Discount: <span id="discountDisplay"
+                                class="text-xl font-medium text-[#1111117e]">0.00TK</span>
                         </li>
 
-                        <li class="text-xl font-semibold mb-3">Total: <span
-                                class="text-xl font-medium text-[#1111117e]">257.00TK</span>
+                        <li class="text-xl font-semibold mb-3">Total: <span id="totalDisplay"
+                                class="text-xl font-medium text-[#1111117e]">0.00TK</span>
                         </li>
                     </ul>
                     <hr>
 
                     <!-- Purchase button and modal -->
-                    <button disabled
+                    <button disabled id="purchaseButton"
                         class="btn bg-[#E527B2] text-white w-full hover:text-black mt-6 text-lg font-semibold"
                         onclick="my_modal_1.showModal()">Make
                         Purchase</button>
@@ -392,7 +398,8 @@
                             <img class="mx-auto mb-9" src="images/congo.png" alt="Image unavailable">
                             <h1 class="font-bold text-5xl mb-4">Congratulations</h1>
                             <p class="font-normal text-xl text-[#00000063] mb-10">Your Purchase the product</p>
-                            <button class="bg-[#E527B2] text-white px-11 py-4 rounded-lg font-semibold text-xl">Go
+                            <button id="homeButton"
+                                class="bg-[#E527B2] text-white px-11 py-4 rounded-lg font-semibold text-xl">Go
                                 Home</button>
                         </form>
                     </dialog>
@@ -408,6 +415,11 @@
 
     </main>
     <!-- Main section ends here -->
+
+
+
+    <!-- Script file -->
+    <script src="index.js"></script>
 
 </body>
 
