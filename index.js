@@ -49,7 +49,7 @@ function calculatePriceAndDiscount(clickedElement) {
     //Calculate discount and apply coupon
     document.querySelector("#couponApplyButton").addEventListener("click", function () {
         const coupon = document.querySelector("#couponField").value;
-        if (coupon !== "SELL20") {
+        if (coupon !== "SELL200") {
             alert("Invalid or expired coupon code!");
         } else {
             const discountedAmount = price * 0.2;
@@ -59,7 +59,7 @@ function calculatePriceAndDiscount(clickedElement) {
             const priceAfterDiscountInFloat = priceAfterDiscount.toFixed(2);
             document.querySelector("#totalDisplay").innerText = priceAfterDiscountInFloat + " TK";
         }
-    })
+    });
 }
 
 
